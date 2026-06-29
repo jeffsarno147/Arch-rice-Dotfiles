@@ -1,0 +1,16 @@
+{
+ "include": [
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  ],
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces#kanji"],
+    "modules-center": [],
+    "modules-right": ["clock"],
+    "hyprland/window": {
+        "max-length": 50
+    },
+    
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    }
+}

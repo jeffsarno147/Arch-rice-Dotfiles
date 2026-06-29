@@ -1,0 +1,87 @@
+{
+        "layer": "top",
+        "position": "top",
+        "reload_style_on_change": true,
+        "modules-left": ["tray", "mpris"],
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": ["network", "clock", "wireplumber"],
+        "output": "DP-1",
+
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "",
+                "default": "",
+                "empty": ""
+            },
+            "persistent-workspaces": {
+                "*": [ 1,2,3,4,5,6 ]
+            }
+        },
+       
+         "clock": {
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+        "network": {
+            "format-ethernet": "{ipaddr}/{cidr}"
+        },
+    
+        "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "player": "spotify",
+    "dynamic-order": ["title", "artist"],
+    "player-icons": {
+        "spotify": "",
+        "Firefox": ""
+    },
+    "status-icons": {
+        "paused": ""
+    }
+},
+
+
+"wireplumber": {
+    "format": "{volume}%",
+    "format-muted": "",
+    "on-click" : "pkill pavucontrol || pavucontrol",
+    "max-volume": 150,
+    "scroll-step": 1
+},
+        "custom/colorpicker": {
+            "format": "{}",
+            "return-type": "json",
+            "interval": "once",
+            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+            "signal": 1
+        },
+        "tray": {
+            "icon-size": 15,
+            "spacing": 15,
+            "show-passive-items": true
+        }
+
+    }
